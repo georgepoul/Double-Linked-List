@@ -190,9 +190,9 @@ public class MyList {
 
             System.out.println("The value: " + value + " added in position: " + isInplace);
 
-        }else if (position >= this.length){
+        }else if (position > this.length){
 
-            for (int i = this.length - 1; i < position - 1; i ++){
+            for (int i = this.length; i < position - 1; i ++){
 
                 addLast(0);
             }
