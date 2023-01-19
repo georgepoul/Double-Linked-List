@@ -207,4 +207,27 @@ public class MyList {
 
         }
     }
+
+    /***
+     * Finds the minimum data in the list
+     * @param tail the first element of the list that methode starts
+     * @return the Node with the minimum data
+     */
+    public Node minimum(Node tail){
+
+        Node min = tail;
+        Node current = tail;
+
+        while (current.getPrevious() != null){
+
+            if (current.getData() < min.getData()){
+
+                min = current;
+            }
+
+            current = current.getPrevious();
+        }
+
+        return min;
+    }
 }

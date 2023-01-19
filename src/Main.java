@@ -42,7 +42,7 @@ public class Main {
 
         System.out.println("The list length is: " + list.getLength());
 
-
+        System.out.println(list.minimum(list.getTail()).getData());
 
     }
 }
