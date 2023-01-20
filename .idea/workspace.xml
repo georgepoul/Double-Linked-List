@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4c7c76af-13ed-4bbf-863f-8377e9a49252" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +55,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.MyListTest.selectionSort">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="DoubleLinkedList" />
@@ -104,11 +104,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MyListTest" />
         <item itemvalue="JUnit.MyListTest.selectionSort" />
         <item itemvalue="JUnit.MyListTest.minimum" />
         <item itemvalue="JUnit.MyListTest.addInPlace" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.MyListTest" />
       </list>
     </recent_temporary>
   </component>
@@ -123,7 +123,8 @@
       <workItem from="1673432313840" duration="1162000" />
       <workItem from="1673435237674" duration="762000" />
       <workItem from="1674111607830" duration="13835000" />
-      <workItem from="1674206936820" duration="11079000" />
+      <workItem from="1674206936820" duration="11237000" />
+      <workItem from="1674236626872" duration="2482000" />
     </task>
     <servers />
   </component>
@@ -135,18 +136,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MyList.java</url>
-          <line>250</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MyList.java</url>
-          <line>252</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MyList.java</url>
-          <line>248</line>
-          <option name="timeStamp" value="46" />
+          <line>259</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

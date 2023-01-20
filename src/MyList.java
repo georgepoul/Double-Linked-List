@@ -243,7 +243,98 @@ public class MyList {
         return min;
     }
 
+    public void bubbleSort() {
 
+        for (int i = 0; i < length - 1; i++) {
+
+            Node cursor = head;
+
+            boolean flag = false;
+
+            for (int j = 0; j < length - i - 2; j++) {
+
+                boolean changed = false;
+
+                if (length > 1) {
+
+                    if (cursor.getData() > cursor.getNext().getData()) {
+
+                        flag = true;
+
+                        if (length == 2) {
+
+                            cursor.getNext().setNext(cursor);
+
+                            cursor.setPrevious(cursor.getNext());
+
+                            cursor.getNext().setPrevious(null);
+
+                            head = cursor.getNext();
+
+                            cursor.setNext(null);
+
+                            tail = cursor;
+
+                            changed = true;
+
+                        } else {
+
+                            if (cursor == head) {
+
+                                cursor.getNext().getNext().setPrevious(cursor);
+                                cursor.setPrevious(cursor.getNext());
+                                cursor.getNext().setPrevious(null);
+                                cursor.setNext(cursor.getNext().getNext());
+                                cursor.getPrevious().setNext(cursor);
+                                head = cursor.getPrevious();
+
+                                changed = true;
+
+                            } else if (cursor.getNext() == tail) {
+
+                                cursor.getPrevious().setNext(cursor.getNext());
+                                cursor.getNext().setNext(cursor);
+                                cursor.getNext().setPrevious(cursor.getPrevious());
+                                cursor.setPrevious(cursor.getNext());
+                                cursor.setNext(null);
+
+                                tail = cursor;
+
+                                changed = true;
+
+                            } else {
+
+                                cursor.getPrevious().setNext(cursor.getNext());
+                                cursor.getNext().getNext().setPrevious(cursor);
+                                cursor.getNext().setPrevious(cursor.getPrevious());
+                                cursor.setPrevious(cursor.getNext());
+                                cursor.setNext(cursor.getNext().getNext());
+                                cursor.getPrevious().setNext(cursor);
+
+                                changed = true;
+
+                            }
+                        }
+
+                    }
+
+
+                }
+
+                if (!changed) {
+                    cursor = cursor.getNext();
+                }
+            }
+
+            if (!flag)
+                break;
+        }
+    }
+
+
+    /***
+     * Sort the list with selection sort method
+     */
     public void selectionSort() {
 
         Node cursor = this.head;
@@ -351,8 +442,6 @@ public class MyList {
 
                         min.setNext(cursor);
 
-                        cursor = min;
-
                     } else {
 
                         Node help;
@@ -375,8 +464,8 @@ public class MyList {
 
                         min.setNext(help);
 
-                        cursor = min;
                     }
+                    cursor = min;
                 }
             }
             cursor = cursor.getNext();
