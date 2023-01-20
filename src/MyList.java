@@ -82,12 +82,12 @@ public class MyList {
 
             head.setPrevious(tmp);
 
-        }else {
+        } else {
 
             tail = tmp;
         }
 
-        head = tmp;
+        this.head = tmp;
 
         length++;
     }
@@ -104,7 +104,7 @@ public class MyList {
 
             tail = head = tmp;
 
-        } else{
+        } else {
 
             tmp.setPrevious(tail);
 
@@ -127,19 +127,19 @@ public class MyList {
 
         int result = -1;
 
-        if (length == 0){
+        if (length == 0) {
 
             System.out.println("List is empty");
 
-        }else if (length == 1){
+        } else if (length == 1) {
 
             result = head.getData();
 
             head = tail = null;
 
-            this.length --;
+            this.length--;
 
-        }else {
+        } else {
 
             result = tail.getData();
 
@@ -147,7 +147,7 @@ public class MyList {
 
             tail.setNext(null);
 
-            length --;
+            length--;
 
         }
 
@@ -182,17 +182,23 @@ public class MyList {
 
             Node newNode = new Node(value);
 
-            Node tmp = current.getNext();
+            current.getNext().setPrevious(newNode);
+
+            newNode.setNext(current.getNext());
 
             current.setNext(newNode);
 
-            newNode.setNext(tmp);
+            newNode.setPrevious(current);
+
+            isInplace++;
 
             System.out.println("The value: " + value + " added in position: " + isInplace);
 
-        }else if (position > this.length){
+            length++;
 
-            for (int i = this.length; i < position - 1; i ++){
+        } else if (position > this.length) {
+
+            for (int i = this.length; i < position - 1; i++) {
 
                 addLast(0);
             }
@@ -201,7 +207,7 @@ public class MyList {
 
             System.out.println("The value: " + value + " added in position: " + position);
 
-        }else{
+        } else {
 
             System.out.println("The position you have insert is not valid. Please try again");
 
@@ -210,24 +216,169 @@ public class MyList {
 
     /***
      * Finds the minimum data in the list
-     * @param tail the first element of the list that methode starts
+     * @param first the first element of the list that methode starts
      * @return the Node with the minimum data
      */
-    public Node minimum(Node tail){
+    public Node minimum(Node first) {
 
-        Node min = tail;
-        Node current = tail;
+        printList();
+        System.out.println("=======================================");
+        Node min = first;
 
-        while (current.getPrevious() != null){
 
-            if (current.getData() < min.getData()){
+        if (first != this.tail) {
+            Node current = first.getNext();
 
-                min = current;
+            while (current != null) {
+
+                if (min.getData() > current.getData()) {
+
+                    min = current;
+                }
+
+                current = current.getNext();
             }
-
-            current = current.getPrevious();
         }
 
         return min;
     }
+
+
+    public void selectionSort() {
+
+        Node cursor = this.head;
+
+        for (int i = 0; i < this.length - 1; i++) {
+
+            Node min = minimum(cursor);
+
+            if (cursor != min) {
+
+                if (cursor == head && min == tail) {
+
+                    if (cursor.getNext() != min) {
+                        min.setNext(this.head.getNext());
+                        cursor.setNext(null);
+                        cursor.setPrevious(min.getPrevious());
+
+                        cursor.getPrevious().setNext(cursor);
+
+                        min.setPrevious(null);
+
+                        min.getNext().setPrevious(min);
+
+
+                        head = min;
+
+                    } else {
+
+                        cursor.setPrevious(min.getPrevious());
+
+                        min.setNext(cursor.getNext());
+                        min.setPrevious(null);
+
+                        head = min;
+
+                        cursor.setNext(null);
+
+                    }
+                    tail = cursor;
+                    cursor = min;
+
+                } else if (cursor == head) {
+
+                    if (cursor.getNext() != min) {
+
+                        cursor.getNext().setPrevious(min);
+
+                    }
+                    min.getNext().setPrevious(cursor);
+                    min.getPrevious().setNext(cursor);
+                    cursor.setPrevious(min.getPrevious());
+                    min.setPrevious(cursor.getNext());
+                    cursor.setNext(min.getNext());
+                    min.setNext(min.getPrevious());
+                    min.setPrevious(null);
+
+                    head = min;
+
+                    cursor = min;
+
+                } else if (min == tail) {
+
+                    if (cursor.getNext() != min) {
+                        min.setNext(cursor.getNext());
+                        min.getPrevious().setNext(cursor);
+
+                        cursor.getNext().setPrevious(min);
+                        cursor.getPrevious().setNext(min);
+                        cursor.setNext(min.getPrevious());
+
+                        min.setPrevious(cursor.getPrevious());
+
+                        cursor.setPrevious(cursor.getNext());
+                        cursor.setNext(null);
+
+                    } else {
+
+                        cursor.getPrevious().setNext(min);
+
+                        min.setPrevious(cursor.getPrevious());
+                        min.setNext(cursor);
+
+                        cursor.setPrevious(min);
+                        cursor.setNext(null);
+
+                    }
+
+                    tail = cursor;
+
+                    cursor = min;
+
+                } else {
+
+                    if (cursor.getNext() == min) {
+
+                        min.getNext().setPrevious(cursor);
+                        min.getNext().getPrevious().setNext(min.getNext());
+
+                        cursor.getPrevious().setNext(min);
+
+                        min.setPrevious(cursor.getPrevious());
+
+                        cursor.setNext(min.getNext());
+                        cursor.setPrevious(min);
+
+                        min.setNext(cursor);
+
+                        cursor = min;
+
+                    } else {
+
+                        Node help;
+
+                        cursor.getPrevious().setNext(min);
+                        cursor.getNext().setPrevious(min);
+
+                        min.getNext().setPrevious(cursor);
+                        min.getPrevious().setNext(cursor);
+
+                        help = cursor.getPrevious();
+
+                        cursor.setPrevious(min.getPrevious());
+
+                        min.setPrevious(help);
+
+                        help = cursor.getNext();
+
+                        cursor.setNext(min.getNext());
+
+                        min.setNext(help);
+                    }
+                }
+            }
+            cursor = cursor.getNext();
+        }
+    }
 }
+

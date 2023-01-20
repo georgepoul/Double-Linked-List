@@ -23,6 +23,7 @@ public class Main {
         list.addLast(9);
         list.addLast(5);
 
+
         System.out.println("The list length is: " + list.getLength());
 
 
@@ -36,13 +37,33 @@ public class Main {
 
         list.addInPlace(3 , 100);
 
+        list.addLast(1000);
+
         list.printHead();
 
         list.printList();
 
         System.out.println("The list length is: " + list.getLength());
 
-        System.out.println(list.minimum(list.getTail()).getData());
+        System.out.println("==============================================================================================");
+
+
+        list.printList();
+
+        System.out.println("==============================================================================================");
+
+        list.selectionSort();
+
+        list.printList();
+
+
+
+
+//        list.selectionSort();
+//
+//        System.out.println("==============================================================================================");
+//
+//        list.printList();
 
     }
 }
