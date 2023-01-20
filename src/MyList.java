@@ -374,6 +374,8 @@ public class MyList {
                         cursor.setNext(min.getNext());
 
                         min.setNext(help);
+
+                        cursor = min;
                     }
                 }
             }

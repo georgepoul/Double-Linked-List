@@ -55,7 +55,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.MyListTest.minimum">
+  <component name="RunManager" selected="JUnit.MyListTest.selectionSort">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="DoubleLinkedList" />
@@ -92,8 +92,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MyListTest.selectionSort" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DoubleLinkedList" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyListTest" />
+      <option name="METHOD_NAME" value="selectionSort" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MyListTest.selectionSort" />
         <item itemvalue="JUnit.MyListTest.minimum" />
         <item itemvalue="JUnit.MyListTest.addInPlace" />
         <item itemvalue="Application.Main" />
@@ -112,12 +123,39 @@
       <workItem from="1673432313840" duration="1162000" />
       <workItem from="1673435237674" duration="762000" />
       <workItem from="1674111607830" duration="13835000" />
-      <workItem from="1674206936820" duration="9386000" />
+      <workItem from="1674206936820" duration="11079000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MyList.java</url>
+          <line>250</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MyList.java</url>
+          <line>252</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MyList.java</url>
+          <line>248</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Node" memberName="next" />
+        <PinnedItemInfo parentTag="Node" memberName="previous" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
