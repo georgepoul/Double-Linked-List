@@ -198,7 +198,7 @@ public class MyList {
 
         } else if (position > this.length) {
 
-            for (int i = this.length; i < position - 1; i++) {
+            for (int i = this.length; i < position; i++) {
 
                 addLast(0);
             }

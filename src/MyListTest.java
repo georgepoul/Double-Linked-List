@@ -109,4 +109,22 @@ class MyListTest {
         assertEquals(list.getHead().getNext().getNext().getNext().getNext().getData(),500);
 
     }
+
+    @Test
+    void minimum() {
+
+        // given
+        list.addFirst(100);
+
+
+        list.addInPlace(0,1);
+        list.addInPlace(1,100);
+        list.addInPlace(4,500);
+
+        // when
+
+        // then
+        assertEquals(0 ,list.minimum(list.getHead()).getData());
+
+    }
 }
