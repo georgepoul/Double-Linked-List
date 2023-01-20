@@ -55,7 +55,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.MyListTest.bubbleSort">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="DoubleLinkedList" />
@@ -72,11 +72,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyListTest.addInPlace" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MyListTest.bubbleSort" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DoubleLinkedList" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MyListTest" />
-      <option name="METHOD_NAME" value="addInPlace" />
+      <option name="METHOD_NAME" value="bubbleSort" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -104,11 +104,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MyListTest.bubbleSort" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.MyListTest" />
         <item itemvalue="JUnit.MyListTest.selectionSort" />
         <item itemvalue="JUnit.MyListTest.minimum" />
-        <item itemvalue="JUnit.MyListTest.addInPlace" />
       </list>
     </recent_temporary>
   </component>

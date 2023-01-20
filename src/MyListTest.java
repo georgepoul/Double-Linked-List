@@ -19,7 +19,7 @@ class MyListTest {
         //when
 
         //then
-        assertEquals(list.getHead().getData(),head);
+        assertEquals(list.getHead().getData(), head);
     }
 
     @Test
@@ -45,7 +45,7 @@ class MyListTest {
         //when
 
         //then
-        assertEquals(list.getLength(),2);
+        assertEquals(list.getLength(), 2);
     }
 
     @Test
@@ -58,7 +58,7 @@ class MyListTest {
         //when
 
         //then
-        assertEquals(list.getHead().getData(),200);
+        assertEquals(list.getHead().getData(), 200);
     }
 
     @Test
@@ -71,7 +71,7 @@ class MyListTest {
         //when
 
         //then
-        assertEquals(list.getHead().getNext().getData(),200);
+        assertEquals(list.getHead().getNext().getData(), 200);
     }
 
     @Test
@@ -94,19 +94,19 @@ class MyListTest {
         list.addFirst(100);
 
 
-        list.addInPlace(0,1);
-        list.addInPlace(1,100);
-        list.addInPlace(4,500);
+        list.addInPlace(0, 1);
+        list.addInPlace(1, 100);
+        list.addInPlace(4, 500);
 
         //when
 
         //then
 
-        assertEquals(list.getHead().getData(),1);
-        assertEquals(list.getHead().getNext().getData(),100);
-        assertEquals(list.getHead().getNext().getNext().getData(),100);
-        assertEquals(list.getHead().getNext().getNext().getNext().getData(),0);
-        assertEquals(list.getHead().getNext().getNext().getNext().getNext().getData(),500);
+        assertEquals(list.getHead().getData(), 1);
+        assertEquals(list.getHead().getNext().getData(), 100);
+        assertEquals(list.getHead().getNext().getNext().getData(), 100);
+        assertEquals(list.getHead().getNext().getNext().getNext().getData(), 0);
+        assertEquals(list.getHead().getNext().getNext().getNext().getNext().getData(), 500);
 
     }
 
@@ -117,14 +117,14 @@ class MyListTest {
         list.addFirst(100);
 
 
-        list.addInPlace(0,1);
-        list.addInPlace(1,100);
-        list.addInPlace(4,500);
+        list.addInPlace(0, 1);
+        list.addInPlace(1, 100);
+        list.addInPlace(4, 500);
 
         // when
 
         // then
-        assertEquals(0 ,list.minimum(list.getHead()).getData());
+        assertEquals(0, list.minimum(list.getHead()).getData());
 
     }
 
@@ -135,12 +135,34 @@ class MyListTest {
         list.addFirst(100);
 
 
-        list.addInPlace(0,1);
-        list.addInPlace(1,100);
-        list.addInPlace(4,500);
+        list.addInPlace(0, 1);
+        list.addInPlace(1, 100);
+        list.addInPlace(4, 500);
 
         // when
         list.selectionSort();
+
+        // then
+        assertEquals(0, list.getHead().getData());
+        assertEquals(1, list.getHead().getNext().getData());
+        assertEquals(100, list.getHead().getNext().getNext().getData());
+        assertEquals(100, list.getHead().getNext().getNext().getNext().getData());
+        assertEquals(500, list.getHead().getNext().getNext().getNext().getNext().getData());
+    }
+
+    @Test
+    void bubbleSort() {
+
+        // given
+        list.addFirst(100);
+
+
+        list.addInPlace(0, 1);
+        list.addInPlace(1, 100);
+        list.addInPlace(4, 500);
+
+        // when
+        list.bubbleSort();
 
         // then
         assertEquals(0, list.getHead().getData());
