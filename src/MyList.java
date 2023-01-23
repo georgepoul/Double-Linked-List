@@ -332,6 +332,11 @@ public class MyList {
         }
     }
 
+    /***
+     * swap twe Nodes
+     * @param cursor the first Node to swap
+     * @param min the second Node to swap
+     */
     public void swapSelection(Node cursor, Node min){
 
         if (cursor == head && min == tail) {
