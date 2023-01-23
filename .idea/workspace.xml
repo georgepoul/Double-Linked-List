@@ -7,6 +7,7 @@
     <list default="true" id="4c7c76af-13ed-4bbf-863f-8377e9a49252" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,8 +106,8 @@
       <list>
         <item itemvalue="JUnit.MyListTest" />
         <item itemvalue="JUnit.MyListTest.bubbleSort" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.MyListTest.selectionSort" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.MyListTest.minimum" />
       </list>
     </recent_temporary>
@@ -124,7 +125,8 @@
       <workItem from="1674111607830" duration="13835000" />
       <workItem from="1674206936820" duration="11237000" />
       <workItem from="1674236626872" duration="3532000" />
-      <workItem from="1674387519813" duration="2691000" />
+      <workItem from="1674387519813" duration="3813000" />
+      <workItem from="1674491328969" duration="1449000" />
     </task>
     <servers />
   </component>
@@ -132,6 +134,15 @@
     <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MyList.java</url>
+          <line>250</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Node" memberName="next" />

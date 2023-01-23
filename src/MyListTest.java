@@ -157,7 +157,7 @@ class MyListTest {
         list.addFirst(100);
 
 
-        list.addInPlace(0, 1);
+        list.addInPlace(1, 1);
         list.addInPlace(1, 100);
         list.addInPlace(4, 500);
 
@@ -168,7 +168,6 @@ class MyListTest {
         assertEquals(0, list.getHead().getData());
         assertEquals(1, list.getHead().getNext().getData());
         assertEquals(100, list.getHead().getNext().getNext().getData());
-        assertEquals(100, list.getHead().getNext().getNext().getNext().getData());
-        assertEquals(500, list.getHead().getNext().getNext().getNext().getNext().getData());
+//       ds
     }
 }

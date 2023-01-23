@@ -196,7 +196,7 @@ public class MyList {
 
             length++;
 
-        } else if (position > this.length) {
+        } else if (position >= this.length) {
 
             for (int i = this.length; i < position; i++) {
 
@@ -254,7 +254,7 @@ public class MyList {
 
             boolean flag = false;
 
-            for (int j = 0; j < length - i - 2; j++) {
+            for (int j = 0; j < length - i - 1; j++) {
 
                 boolean changed = false;
 
@@ -339,7 +339,18 @@ public class MyList {
      */
     public void swapSelection(Node cursor, Node min){
 
-        if (cursor == head && min == tail) {
+        if (length == 2 && min == cursor.getNext()) {
+
+            cursor.setPrevious(min);
+            cursor.setNext(null);
+
+            min.setNext(cursor);
+            min.setPrevious(null);
+
+            head = min;
+            tail = cursor;
+
+        }else if (length > 2 && cursor == head && min == tail) {
 
             if (cursor.getNext() != min) {
 
@@ -370,7 +381,7 @@ public class MyList {
             }
             tail = cursor;
 
-        } else if (cursor == head) {
+        } else if (cursor == head && length > 2) {
 
             if (cursor.getNext() != min) {
 
@@ -387,7 +398,7 @@ public class MyList {
 
             head = min;
 
-        } else if (min == tail) {
+        } else if (min == tail && length > 2) {
 
             if (cursor.getNext() != min) {
                 min.setNext(cursor.getNext());
