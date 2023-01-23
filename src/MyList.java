@@ -243,6 +243,9 @@ public class MyList {
         return min;
     }
 
+    /***
+     *Sort the list with bubble sort method
+     */
     public void bubbleSort() {
 
         for (int i = 0; i < length - 1; i++) {
@@ -277,7 +280,7 @@ public class MyList {
 
                             changed = true;
 
-                        } else {
+                        } else if (length > 2) {
 
                             if (cursor == head) {
 
@@ -286,6 +289,7 @@ public class MyList {
                                 cursor.getNext().setPrevious(null);
                                 cursor.setNext(cursor.getNext().getNext());
                                 cursor.getPrevious().setNext(cursor);
+
                                 head = cursor.getPrevious();
 
                                 changed = true;
@@ -315,10 +319,7 @@ public class MyList {
 
                             }
                         }
-
                     }
-
-
                 }
 
                 if (!changed) {
@@ -331,6 +332,125 @@ public class MyList {
         }
     }
 
+    public void swapSelection(Node cursor, Node min){
+
+        if (cursor == head && min == tail) {
+
+            if (cursor.getNext() != min) {
+
+                min.setNext(this.head.getNext());
+                cursor.setNext(null);
+                cursor.setPrevious(min.getPrevious());
+
+                cursor.getPrevious().setNext(cursor);
+
+                min.setPrevious(null);
+
+                min.getNext().setPrevious(min);
+
+
+                head = min;
+
+            } else {
+
+                cursor.setPrevious(min.getPrevious());
+
+                min.setNext(cursor.getNext());
+                min.setPrevious(null);
+
+                head = min;
+
+                cursor.setNext(null);
+
+            }
+            tail = cursor;
+
+        } else if (cursor == head) {
+
+            if (cursor.getNext() != min) {
+
+                cursor.getNext().setPrevious(min);
+
+            }
+            min.getNext().setPrevious(cursor);
+            min.getPrevious().setNext(cursor);
+            cursor.setPrevious(min.getPrevious());
+            min.setPrevious(cursor.getNext());
+            cursor.setNext(min.getNext());
+            min.setNext(min.getPrevious());
+            min.setPrevious(null);
+
+            head = min;
+
+        } else if (min == tail) {
+
+            if (cursor.getNext() != min) {
+                min.setNext(cursor.getNext());
+                min.getPrevious().setNext(cursor);
+
+                cursor.getNext().setPrevious(min);
+                cursor.getPrevious().setNext(min);
+                cursor.setNext(min.getPrevious());
+
+                min.setPrevious(cursor.getPrevious());
+
+                cursor.setPrevious(cursor.getNext());
+                cursor.setNext(null);
+
+            } else {
+
+                cursor.getPrevious().setNext(min);
+
+                min.setPrevious(cursor.getPrevious());
+                min.setNext(cursor);
+
+                cursor.setPrevious(min);
+                cursor.setNext(null);
+
+            }
+
+            tail = cursor;
+
+        } else {
+
+            if (cursor.getNext() == min) {
+
+                min.getNext().setPrevious(cursor);
+                min.getNext().getPrevious().setNext(min.getNext());
+
+                cursor.getPrevious().setNext(min);
+
+                min.setPrevious(cursor.getPrevious());
+
+                cursor.setNext(min.getNext());
+                cursor.setPrevious(min);
+
+                min.setNext(cursor);
+
+            } else {
+
+                Node help;
+
+                cursor.getPrevious().setNext(min);
+                cursor.getNext().setPrevious(min);
+
+                min.getNext().setPrevious(cursor);
+                min.getPrevious().setNext(cursor);
+
+                help = cursor.getPrevious();
+
+                cursor.setPrevious(min.getPrevious());
+
+                min.setPrevious(help);
+
+                help = cursor.getNext();
+
+                cursor.setNext(min.getNext());
+
+                min.setNext(help);
+            }
+        }
+    }
 
     /***
      * Sort the list with selection sort method
@@ -345,128 +465,10 @@ public class MyList {
 
             if (cursor != min) {
 
-                if (cursor == head && min == tail) {
+                swapSelection(cursor,min);
 
-                    if (cursor.getNext() != min) {
-                        min.setNext(this.head.getNext());
-                        cursor.setNext(null);
-                        cursor.setPrevious(min.getPrevious());
+                cursor = min;
 
-                        cursor.getPrevious().setNext(cursor);
-
-                        min.setPrevious(null);
-
-                        min.getNext().setPrevious(min);
-
-
-                        head = min;
-
-                    } else {
-
-                        cursor.setPrevious(min.getPrevious());
-
-                        min.setNext(cursor.getNext());
-                        min.setPrevious(null);
-
-                        head = min;
-
-                        cursor.setNext(null);
-
-                    }
-                    tail = cursor;
-                    cursor = min;
-
-                } else if (cursor == head) {
-
-                    if (cursor.getNext() != min) {
-
-                        cursor.getNext().setPrevious(min);
-
-                    }
-                    min.getNext().setPrevious(cursor);
-                    min.getPrevious().setNext(cursor);
-                    cursor.setPrevious(min.getPrevious());
-                    min.setPrevious(cursor.getNext());
-                    cursor.setNext(min.getNext());
-                    min.setNext(min.getPrevious());
-                    min.setPrevious(null);
-
-                    head = min;
-
-                    cursor = min;
-
-                } else if (min == tail) {
-
-                    if (cursor.getNext() != min) {
-                        min.setNext(cursor.getNext());
-                        min.getPrevious().setNext(cursor);
-
-                        cursor.getNext().setPrevious(min);
-                        cursor.getPrevious().setNext(min);
-                        cursor.setNext(min.getPrevious());
-
-                        min.setPrevious(cursor.getPrevious());
-
-                        cursor.setPrevious(cursor.getNext());
-                        cursor.setNext(null);
-
-                    } else {
-
-                        cursor.getPrevious().setNext(min);
-
-                        min.setPrevious(cursor.getPrevious());
-                        min.setNext(cursor);
-
-                        cursor.setPrevious(min);
-                        cursor.setNext(null);
-
-                    }
-
-                    tail = cursor;
-
-                    cursor = min;
-
-                } else {
-
-                    if (cursor.getNext() == min) {
-
-                        min.getNext().setPrevious(cursor);
-                        min.getNext().getPrevious().setNext(min.getNext());
-
-                        cursor.getPrevious().setNext(min);
-
-                        min.setPrevious(cursor.getPrevious());
-
-                        cursor.setNext(min.getNext());
-                        cursor.setPrevious(min);
-
-                        min.setNext(cursor);
-
-                    } else {
-
-                        Node help;
-
-                        cursor.getPrevious().setNext(min);
-                        cursor.getNext().setPrevious(min);
-
-                        min.getNext().setPrevious(cursor);
-                        min.getPrevious().setNext(cursor);
-
-                        help = cursor.getPrevious();
-
-                        cursor.setPrevious(min.getPrevious());
-
-                        min.setPrevious(help);
-
-                        help = cursor.getNext();
-
-                        cursor.setNext(min.getNext());
-
-                        min.setNext(help);
-
-                    }
-                    cursor = min;
-                }
             }
             cursor = cursor.getNext();
         }
